@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p  :style="{backgroundColor: backgroundParagrafo}" class="paragrafo" v-if="comboBox == false">{{nome}} {{valor}}</p>
+        <p  :style="{color: cor, 'font-size': tamanho, 'font-weight': fontWeight}" class="paragrafo" v-if="comboBox == false">{{nome}} {{valor}}</p>
         <p v-else> {{nome}} <CampoSelect :equipe="equipe" @profissionalSelecionado="alterarSelect"/></p>
   </div>    
   
@@ -15,7 +15,10 @@ export default {
     components: {CampoSelect},
     data(){
         return{
-            backgroundParagrafo : null
+            tamanho : null,
+            cor: null,
+            fontWeight: null,
+            family: null
         }
     },
     methods:{
@@ -25,10 +28,14 @@ export default {
         },
         destacarAtrasoOuAdiatamento(){
             if(this.nome === "Tarefa adiantada:"){
-                this.backgroundParagrafo = 'yellow'
+                this.cor = 'yellow'
+                this.tamanho = '20px'
+                this.fontWeight = '700'                
             }
             else if (this.nome === 'Tarefa atrasada: '){
                 this.backgroundParagrafo = 'red'
+                this.tamanho = '20px'
+                this.fontWeight = '700'
             }
             else{
                 this.backgroundParagrafo = null
@@ -44,6 +51,6 @@ export default {
 </script>
 
 <style scoped>
-    
+ 
     
 </style>
