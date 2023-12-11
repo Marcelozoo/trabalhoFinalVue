@@ -58,9 +58,11 @@ export default {
             }
       },
       calculaTempoSaldo(indiceDoObjeto){
+        let dataDaTarefa = this.tarefasAndamento[indiceDoObjeto].tempoQueElaEntraNoAndamento
 
-        const dataDaTarefa = parseISO(this.tarefasAndamento[indiceDoObjeto].tempoQueElaEntraNoAndamento)
-        
+        if(typeof dataDaTarefa === 'string'){
+          dataDaTarefa = parseISO(dataDaTarefa)
+        }
         const dataAtual = new Date()
         const diferencaEmMilissegundos = dataAtual.getTime() - dataDaTarefa.getTime();
         return diferencaEmMilissegundos
@@ -86,14 +88,14 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
   .container-tarefas{ 
-    min-width: 250px;
-    border-radius: 8px;
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
-    padding: 5px;
-    margin-right: 10px;
-    background-color: #ade4b5;
+      min-width: 250px;
+      border-radius: 8px;
+      border-left: none;
+      border-top: none;
+      border-bottom: none;
+      padding: 5px;
+      margin-right: 10px;
+      background-color: #ade4b5;
     }
 
     .container-tarefas h2{
@@ -111,6 +113,15 @@ export default {
 
   .card-titulo{
     font-family: 'Nova Square', sans-serif;
+
+  }
+
+
+  @media screen and (max-width: 850px){
+      .container-tarefas{
+          grid-area: 2 / 1 / 3 / 2;
+          margin-left: 40px;
+      }
 
   }
 

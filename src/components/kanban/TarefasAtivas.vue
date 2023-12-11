@@ -104,4 +104,14 @@ export default {
     .card-titulo{
         font-family: 'Nova Square', sans-serif;
     }
+
+
+    @media screen and (max-width: 850px){
+      .container-tarefas{
+        grid-area: 1 / 1 / 2 / 2; 
+        margin-left: 40px;
+
+      }
+
+    }
 </style>

@@ -69,9 +69,9 @@ export default {
 
 
     .btn-card{
-        position: absolute;
+        /* position: absolute;
         top: 80%;
-        right: 10%;
+        right: 10%; */
         padding: 8px;
         background-color: rgb(105, 247, 105);
         border: rgb(105, 247, 105);
@@ -86,4 +86,5 @@ export default {
         background-color: green;
         color: white;
     }
+
 </style>

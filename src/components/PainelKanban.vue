@@ -5,6 +5,9 @@
         <div class="menu">
             <h2 class="titulo-kanban">Board Kanban</h2>
             <button class="btn-cadastro-tarefa" @click="abrirFormularioCadastro">Cadastrar Tarefa</button>
+            <div class="container-img"><a @click="irParaInicio"><img src="../assets/back.png" class="imagem"></a></div>
+            
+            
         </div>
 
         <span class="linha"></span>
@@ -14,7 +17,7 @@
         <FormularioTarefa @addTarefa="adicionarTarefa" v-show="formularioVisivel"/>
 
         <div class="container-grid">
-            <TarefasAtivas/>
+            <TarefasAtivas />
             <TarefasAndamento/>
             <TarefasConcluidas/>
         </div>
@@ -65,6 +68,10 @@ export default {
         adicionarTarefa(tarefa){
             this.inserirTarefa(tarefa)
         },
+        irParaInicio(){
+            this.$router.push({ name: 'inicio' });
+
+        }
 
     },
 
@@ -75,7 +82,25 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
-    
+
+   
+    .container-img{
+        position: absolute;
+        right: 280px;
+        top: 22px;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+    }
+
+    .container-img:hover{
+        cursor: pointer;
+
+    }
+    .imagem{
+        width: 100%;
+        height: 100%;
+    }
 
     .container-grid.aberto {
         filter: blur(5px); 
@@ -106,15 +131,14 @@ export default {
         grid-template-columns: repeat(3, 1fr) repeat(2, 0);
         grid-template-rows: 1fr repeat(4, 0);
         grid-column-gap: 15px;
+        grid-row-gap: 10px;
         margin: 20px;
         filter: blur(0); 
         opacity: 1; 
-        transition: filter 0.3s ease-out, opacity 0.3s ease-out; 
+        transition: filter 0.3s ease-out, opacity 0.3s ease-out;
     }
     .menu{
         margin-top: 30px;
-
-
     }
     .titulo-kanban{
         display: inline;
@@ -152,8 +176,8 @@ export default {
     .span-btn-fechar{
         display: none;
         position: absolute;
-        left: 73%;
-        top: 30%;
+        left: 73.7%;
+        top: 34.3%;
         margin: 2px;
         z-index: 6;
         
@@ -172,6 +196,26 @@ export default {
 
     .titulo-form{
         display: inline;
+    }
+
+    @media screen and (max-width: 850px){
+        .container-grid{
+            grid-template-columns: 1fr repeat(4, 0);
+            grid-template-rows: repeat(3, 1fr) repeat(2, 0);
+
+        }
+
+    }
+
+    
+    @media screen and (max-width: 1366px){
+        .span-btn-fechar{
+            top: 27% ;
+            left: 73.2%;
+
+            
+        }
+        
     }
 
 

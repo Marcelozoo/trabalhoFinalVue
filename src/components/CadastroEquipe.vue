@@ -107,10 +107,9 @@ export default {
 
 <style scoped>
 
-
     h2{
         margin-left: 10px;
-
+        font-size: 30px;
     }
     .container-form{
         position: absolute;
@@ -118,8 +117,8 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
-        width: 800px;
-        height: 240px !important;
+        width: 1200px;
+        height: 400px;
         background-color: #fff;
         border-radius: 8px;
         overflow: hidden;
@@ -145,7 +144,7 @@ export default {
         width: 100%;
         height: 100%;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 15px;
+        font-size: 20px;
         padding: 5px;
     }
 
@@ -162,6 +161,7 @@ export default {
     label{
         display: flex;
         margin-bottom: 3px;
+        margin-top: 20px;
     }
     input{
         border: 1px solid rgb(161, 167, 240);
@@ -170,14 +170,15 @@ export default {
         padding: 4px;
 
     }
-    select{
+    #comboBox{
+        font-size: 16px;
         border-radius: 8px;
         border: 1px solid rgb(161, 167, 240);
         padding: 4px;
 
     }
 
-    select:hover{
+    #comboBox:hover{
         cursor: pointer;
     }
     
@@ -190,33 +191,107 @@ export default {
     .btn-kanban{
         position: absolute;
         left: 10px;
-        bottom: 19px;
-        padding: 10px;
+        bottom: 50px;
+        padding: 20px;
         border-radius: 10px;
         border: none;
         background: rgb(84, 84, 235);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 15px;
         margin-left: 6px;
+        color: white;
 
     }
 
     .btn-enviar{
         position: absolute;
         right: 20px;
-        bottom: 19px;
-        padding: 10px;
+        bottom: 50px;
+        padding: 20px;
         border-radius: 10px;
         border: none;
         background: rgb(84, 84, 235);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 15px;
         margin-right: -4px;
+        color: white;
+
     }
 
     button:hover{
         cursor: pointer;
         background: rgb(39, 39, 182);
     }
+
+    @media screen and (max-width: 800px){
+        .container-esquerda{
+            display: none;
+        }
+
+        .container-direita{
+            width: 100%;
+        }
+
+        .container-form{
+            width: 90% !important;
+        }
+
+        #comboBox{
+            font-size: 10px !important;
+        }    
+    }
+
+
+    @media screen and (max-width: 1000px){
+        #comboBox{
+            font-size: 10px !important;
+        }
+    }
+
+    @media screen and (max-width: 1366px){
+        .container-form{
+           
+            width: 800px;
+            height: 240px ;
+            
+        }
+
+        .formulario-cadastro{
+            font-size: 15px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+
+        #comboBox{
+            font-size: 12px;
+        }
+
+
+        .btn-kanban{
+            left: 10px;
+            bottom: 19px;
+            padding: 10px;
+            font-size: 15px;
+
+        }
+
+        .btn-enviar{
+            right: 20px;
+            bottom: 19px;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        label{
+            margin-top: 2px;
+
+        }
+
+        
+    }
+
+
 
 </style>
