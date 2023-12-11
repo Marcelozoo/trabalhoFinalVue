@@ -203,6 +203,10 @@ export default {
 
     }
 
+    .btn-kanban:disabled{
+        color: grey;
+    }
+
     .btn-enviar{
         position: absolute;
         right: 20px;
@@ -222,6 +226,7 @@ export default {
         cursor: pointer;
         background: rgb(39, 39, 182);
     }
+
 
     @media screen and (max-width: 800px){
         .container-esquerda{

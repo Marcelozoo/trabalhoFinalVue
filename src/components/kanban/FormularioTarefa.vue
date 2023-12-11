@@ -132,5 +132,19 @@ export default {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
+    
+    @media screen and (max-width: 1365px){
+        .formulario-tarefa{
+            height: 350px;
+            width: 55%;
+        }
+
+        .titulo-form{
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+           
+    }
 
 </style>

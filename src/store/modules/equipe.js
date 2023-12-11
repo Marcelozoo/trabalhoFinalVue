@@ -1,6 +1,6 @@
 export default {
     state:{
-        equipe: [{nome: "Marcelo Bento Côgo", profissao: "Engenheiro de Software"}]
+        equipe: []
     },
     mutations:{
         adicionarMembro(state, usuario){

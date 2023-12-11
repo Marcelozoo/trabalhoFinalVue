@@ -198,11 +198,25 @@ export default {
         display: inline;
     }
 
+    @media screen and (max-width: 550px){
+        .container-img{
+            right: 30px;
+
+        }
+
+    }
+
+
+
     @media screen and (max-width: 850px){
         .container-grid{
             grid-template-columns: 1fr repeat(4, 0);
             grid-template-rows: repeat(3, 1fr) repeat(2, 0);
 
+        }
+
+        .span-btn-fechar{
+            left: 74.5% !important;
         }
 
     }
